@@ -1,0 +1,33 @@
+window.addEventListener('scroll',function(){var sp=document.getElementById('scrollProgress');if(sp){var st=document.documentElement.scrollTop,sh=document.documentElement.scrollHeight-document.documentElement.clientHeight;sp.style.width=(st/sh*100)+'%';}});
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');}});},{threshold:0.1});
+document.querySelectorAll('.content section').forEach(function(el){obs.observe(el);});
+var sections=document.querySelectorAll('section[id]'),navLinks=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',function(){var current='';sections.forEach(function(s){if(window.scrollY>=s.offsetTop-80)current=s.id;});navLinks.forEach(function(a){a.classList.remove('active');if(a.getAttribute('href')==='#'+current)a.classList.add('active');});});
+var nt=document.getElementById('navToggle'),nl=document.getElementById('navLinks');
+if(nt)nt.addEventListener('click',function(){nl.classList.toggle('open');});
+document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open');});});
+var smb=document.getElementById('showMoreSkillsBtn'),sg=document.getElementById('skillsGrid'),exp=false;
+if(smb)smb.addEventListener('click',function(){exp=!exp;if(exp){sg.classList.remove('hidden-skills');smb.innerHTML='<i class="fas fa-minus-circle"></i> Show Less';}else{sg.classList.add('hidden-skills');smb.innerHTML='<i class="fas fa-plus-circle"></i> Show More';}});
+var cb=document.getElementById('chatbotToggle'),cw=document.getElementById('chatbotWindow'),cc=document.getElementById('closeChat'),cs=document.getElementById('chatSend'),ci=document.getElementById('chatInput'),cm=document.getElementById('chatMessages');
+if(cb)cb.addEventListener('click',function(){cw.style.display=cw.style.display==='flex'?'none':'flex';if(cw.style.display==='flex')ci.focus();});
+if(cc)cc.addEventListener('click',function(){cw.style.display='none';});
+function showTyping(){var d=document.createElement('div');d.className='message';d.id='typing';d.innerHTML='<div class="typing-indicator"><span></span><span></span><span></span></div>';cm.appendChild(d);cm.scrollTop=cm.scrollHeight;}
+function removeTyping(){var i=document.getElementById('typing');if(i)i.remove();}
+function addMsg(text,isUser){var d=document.createElement('div');d.className='message'+(isUser?' user-message':'');d.innerHTML=isUser?'<div class="message-text">'+escHtml(text)+'</div>':'<div class="bot-message">'+text+'</div>';cm.appendChild(d);cm.scrollTop=cm.scrollHeight;}
+function escHtml(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML;}
+function getBotReply(m){m=m.toLowerCase();
+if(m.includes('service')||m.includes('offer')||m.includes('freelance')){return '<strong>My Freelance Services</strong><br><br>&#128296; <strong>Full Stack Development</strong><br>React/Next.js, Node.js, REST APIs, Mobile-responsive<br><br>&#128187; <strong>Portfolio Creation</strong><br>Custom design, Mobile responsive, SEO optimized<br><br>&#127963;&#65039; <strong>System Design and Architecture</strong><br>Scalability, Performance, Tech stack consulting<br><br><em>Free 30-minute consultation for all new clients!</em>';}
+if(m.includes('price')||m.includes('cost')||m.includes('rate')){return '<strong>Pricing</strong><br><br>Full Stack Dev: Starting at Rs 15,000<br>Portfolio Creation: Starting at Rs 5,000<br>System Design: Starting at Rs 3,000/session<br><br><em>Custom quotes available!</em>';}
+if(m.includes('skill')||m.includes('tool')||m.includes('tech')){return '<strong>My Skills</strong><br><br>Frontend: React.js, Next.js, HTML5/CSS3<br>Backend: Java, Spring Boot, Node.js, Express.js<br>Databases: MySQL, MongoDB, JPA, Hibernate, DBeaver<br>Tools & Processes: Git, Docker, SDLC, Agile<br>System Design: Microservices, Architecture';}
+if(m.includes('experience')||m.includes('work')||m.includes('job')){return '<strong>Work Experience</strong><br><br><strong>Backend Engineer Intern - SheCan Foundation</strong> | July 2026<br>Spring Boot REST APIs, reduced response time by 15%<br>Payment gateway integration, bug resolution<br><br><strong>Freelance Web Developer</strong> | 2025-Present<br>Custom web solutions for startups and businesses<br>Reduced server response times by 35%';}
+if(m.includes('project')||m.includes('built')){return '<strong>Featured Projects</strong><br><br>StockSense ERP (React + Vite + Tailwind)<br>Agritalk (React + Vite + Google AI Studio)<br><br>GitHub: github.com/Shubham7suryavanshi';}
+if(m.includes('education')||m.includes('study')||m.includes('college')){return '<strong>Education</strong><br><br>Intermediate - Science<br>College of Commerce Arts and Science (2020-2022)<br>Percentage: 79%<br><br>Higher Secondary Education<br>Infant Jesus Academy (2019-2020)<br>Percentage: 87.2%';}
+if(m.includes('contact')||m.includes('email')||m.includes('phone')){return '<strong>Contact Information</strong><br><br>Phone: +91 7643861683<br>Email: shubhamsuryavanshi7643@gmail.com<br>LinkedIn: linkedin.com/in/shubham-7463-suryavanshi<br>GitHub: github.com/Shubham7suryavanshi<br>Availability: Mon-Sat, 9AM - 8PM';}
+if(m.includes('hire')||m.includes('available')){return '<strong>Hire Me!</strong><br><br>Currently available for freelance projects!<br><br>Clean code, fast delivery, free consultation, post-delivery support<br><br>Phone: +91 7643861683<br>Email: shubhamsuryavanshi7643@gmail.com';}
+if(m.includes('hello')||m.includes('hi')||m.includes('hey')){return '<strong>Hello!</strong><br><br>Welcome! I\'m Shubham, a Full Stack Developer and System Designer.<br><br>Ask me about services, skills, experience, projects, education, or how to hire me!';}
+if(m.includes('thank')){return '<strong>You\'re welcome!</strong><br><br>Ready to work together?<br>Phone: +91 7643861683<br>Email: shubhamsuryavanshi7643@gmail.com';}
+return '<strong>Thanks for your question!</strong><br><br>I can help with:<br>Services and pricing, Skills, Experience, Projects, Education, Contact<br><br>Or email me directly: shubhamsuryavanshi7643@gmail.com';}
+function sendMsg(){var msg=ci.value.trim();if(!msg)return;addMsg(msg,true);ci.value='';cs.disabled=true;showTyping();setTimeout(function(){removeTyping();addMsg(getBotReply(msg),false);cs.disabled=false;ci.focus();},500);}
+document.querySelectorAll('.suggestion-chip').forEach(function(c){c.addEventListener('click',function(){ci.value=c.getAttribute('data-question');sendMsg();});});
+if(cs)cs.addEventListener('click',sendMsg);
+if(ci)ci.addEventListener('keypress',function(e){if(e.key==='Enter')sendMsg();});
