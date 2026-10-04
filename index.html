@@ -69,7 +69,8 @@ nav{position:sticky;top:0;background:rgba(224,242,254,0.85);backdrop-filter:blur
 .skill-card:hover{border-color:#3b82f6;transform:translateY(-8px);background:rgba(255,255,255,0.95);box-shadow:0 15px 35px rgba(0,0,0,0.1)}
 .skill-icon{font-size:2rem;color:#2563eb;margin-bottom:1rem}
 .skill-name{font-weight:700;font-size:1.1rem;margin-bottom:0.5rem}
-.exp-grid,.education-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.8rem;margin-top:2rem}
+.education-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.8rem;margin-top:2rem}
+.exp-grid{display:flex;flex-direction:column;gap:1.8rem;margin-top:2rem}
 .exp-card,.education-card{background:rgba(255,255,255,0.8);backdrop-filter:blur(8px);border-radius:28px;padding:1.5rem;border:1px solid rgba(37,99,235,0.2);transition:all 0.4s cubic-bezier(0.4,0,0.2,1);color:#0f2f44;box-shadow:0 4px 12px rgba(0,0,0,0.03)}
 .exp-card:hover,.education-card:hover{border-color:#3b82f6;transform:translateY(-8px);background:rgba(255,255,255,0.95);box-shadow:0 15px 35px rgba(0,0,0,0.1)}
 .exp-title,.edu-title{font-size:1.3rem;font-weight:700;color:#1e3a8a}
@@ -357,7 +358,7 @@ footer{text-align:center;padding:2rem;background:rgba(200,230,255,0.6);border-ra
     </div>
     <div class="exp-card">
       <div class="exp-title">Freelance Web Developer</div>
-      <div class="exp-date">2023 &ndash; Present</div>
+      <div class="exp-date">2025 &ndash; Present</div>
       <ul style="margin-left:1rem;color:#1e3a5f">
         <li>Delivered custom web solutions for startups and small businesses across diverse industries.</li>
         <li>Architected scalable backend systems with Node.js and Express, reducing server response times by 35%.</li>
@@ -483,7 +484,7 @@ function getBotReply(m){m=m.toLowerCase();
 if(m.includes('service')||m.includes('offer')||m.includes('freelance')){return '<strong>My Freelance Services</strong><br><br>&#128296; <strong>Full Stack Development</strong><br>React/Next.js, Node.js, REST APIs, Mobile-responsive<br><br>&#128187; <strong>Portfolio Creation</strong><br>Custom design, Mobile responsive, SEO optimized<br><br>&#127963;&#65039; <strong>System Design and Architecture</strong><br>Scalability, Performance, Tech stack consulting<br><br><em>Free 30-minute consultation for all new clients!</em>';}
 if(m.includes('price')||m.includes('cost')||m.includes('rate')){return '<strong>Pricing</strong><br><br>Full Stack Dev: Starting at Rs 15,000<br>Portfolio Creation: Starting at Rs 5,000<br>System Design: Starting at Rs 3,000/session<br><br><em>Custom quotes available!</em>';}
 if(m.includes('skill')||m.includes('tool')||m.includes('tech')){return '<strong>My Skills</strong><br><br>Frontend: React.js, Next.js, HTML5/CSS3<br>Backend: Java, Spring Boot, Node.js, Express.js<br>Databases: MySQL, MongoDB, JPA, Hibernate, DBeaver<br>Tools & Processes: Git, Docker, SDLC, Agile<br>System Design: Microservices, Architecture';}
-if(m.includes('experience')||m.includes('work')||m.includes('job')){return '<strong>Work Experience</strong><br><br><strong>Backend Engineer Intern - SheCan Foundation</strong> | July 2026<br>Spring Boot REST APIs, reduced response time by 15%<br>Payment gateway integration, bug resolution<br><br><strong>Freelance Web Developer</strong> | 2023-Present<br>Custom web solutions for startups and businesses<br>Reduced server response times by 35%';}
+if(m.includes('experience')||m.includes('work')||m.includes('job')){return '<strong>Work Experience</strong><br><br><strong>Backend Engineer Intern - SheCan Foundation</strong> | July 2026<br>Spring Boot REST APIs, reduced response time by 15%<br>Payment gateway integration, bug resolution<br><br><strong>Freelance Web Developer</strong> | 2025-Present<br>Custom web solutions for startups and businesses<br>Reduced server response times by 35%';}
 if(m.includes('project')||m.includes('built')){return '<strong>Featured Projects</strong><br><br>StockSense ERP (React + Vite + Tailwind)<br>Agritalk (React + Vite + Google AI Studio)<br><br>GitHub: github.com/Shubham7suryavanshi';}
 if(m.includes('education')||m.includes('study')||m.includes('college')){return '<strong>Education</strong><br><br>Intermediate - Science<br>College of Commerce Arts and Science (2020-2022)<br>Percentage: 79%<br><br>Higher Secondary Education<br>Infant Jesus Academy (2019-2020)<br>Percentage: 87.2%';}
 if(m.includes('contact')||m.includes('email')||m.includes('phone')){return '<strong>Contact Information</strong><br><br>Phone: +91 7643861683<br>Email: shubhamsuryavanshi7643@gmail.com<br>LinkedIn: linkedin.com/in/shubham-7463-suryavanshi<br>GitHub: github.com/Shubham7suryavanshi<br>Availability: Mon-Sat, 9AM - 8PM';}
