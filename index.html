@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+<title>Shubham Suryavanshi | Full Stack Developer and System Designer</title>
+<meta name="description" content="Portfolio of Shubham Suryavanshi - Full Stack Developer and System Designer. Expert in web app development, API integration, database architecture, and scalable digital solutions.">
+<meta name="keywords" content="Shubham Suryavanshi, Full Stack Developer, System Designer, Web Developer, React, Node.js, Portfolio, Freelance Developer">
+<meta name="author" content="Shubham Suryavanshi">
+<meta name="robots" content="index, follow">
+<meta name="theme-color" content="#2563eb">
+<meta property="og:title" content="Shubham Suryavanshi | Full Stack Developer and System Designer">
+<meta property="og:description" content="Full Stack Developer and Freelancer passionate about scalable digital solutions.">
+<meta property="og:type" content="website">
+<link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
+html{scroll-behavior:smooth}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:linear-gradient(145deg,#e0f2fe 0%,#b8e1fc 100%);color:#0a2540;overflow-x:hidden}
+body::before{content:'';position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(circle at 20% 50%,rgba(59,130,246,0.08) 0%,transparent 50%),radial-gradient(circle at 80% 80%,rgba(96,165,250,0.08) 0%,transparent 50%);pointer-events:none;z-index:0;animation:bgShift 15s ease-in-out infinite}
+@keyframes bgShift{0%,100%{opacity:0.5}50%{opacity:1}}
+.scroll-progress{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,#2563eb,#60a5fa);z-index:1001;width:0%;transition:width 0.1s ease;box-shadow:0 0 10px rgba(37,99,235,0.3)}
+nav{position:sticky;top:0;background:rgba(224,242,254,0.85);backdrop-filter:blur(12px);border-bottom:1px solid rgba(37,99,235,0.25);padding:1rem 2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;z-index:100;box-shadow:0 4px 20px rgba(0,0,0,0.05)}
+.logo{font-size:1.6rem;font-weight:800;background:linear-gradient(135deg,#181b67,#2563eb);-webkit-background-clip:text;background-clip:text;color:transparent}
+.nav-links{display:flex;gap:2rem;flex-wrap:wrap;list-style:none}
+.nav-links a{color:#0c4a6e;text-decoration:none;font-weight:600;transition:0.3s;font-size:0.95rem;position:relative}
+.nav-links a::after{content:'';position:absolute;bottom:-5px;left:0;width:0;height:2px;background:#2563eb;transition:width 0.3s ease}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-links a:hover,.nav-links a.active{color:#2563eb;font-weight:700}
+.content section{padding:5rem 2rem;max-width:1300px;margin:0 auto;border-radius:48px;margin-bottom:2rem;background:rgba(255,255,255,0.5);backdrop-filter:blur(4px);box-shadow:0 8px 30px rgba(0,0,0,0.05);position:relative;overflow:hidden;opacity:0;transform:translateY(30px);transition:all 0.8s cubic-bezier(0.4,0,0.2,1);scroll-margin-top:80px}
+.content section.visible{opacity:1;transform:translateY(0)}
+@keyframes fadeInUp{from{opacity:0;transform:translateY(30px);filter:blur(2px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}
+@keyframes fadeIn{from{opacity:0}to{opacity:1}}
+@keyframes dataStream{0%{transform:translateX(-100%);opacity:0}10%{opacity:1}90%{opacity:1}100%{transform:translateX(100%);opacity:0}}
+@keyframes floatData{0%,100%{transform:translateY(0) rotate(0deg);opacity:0.1}50%{transform:translateY(-20px) rotate(180deg);opacity:0.35}}
+@keyframes rotateIcon{from{transform:rotate(0deg)}to{transform:rotate(360deg)}}
+#home{background:rgba(224,242,254,0.7)}
+#about{background:rgba(255,255,255,0.95);padding:0!important;overflow:hidden}
+#freelance{background:rgba(255,255,255,0.7)}
+#skills{background:rgba(209,235,255,0.7)}
+#experience{background:rgba(199,230,255,0.7)}
+#education{background:rgba(194,225,255,0.7)}
+#projects{background:rgba(189,224,254,0.7)}
+#contact{background:rgba(179,218,255,0.75)}
+.hero{min-height:85vh;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:3rem}
+.hero-left{flex:1;min-width:280px}
+.hero-left h1{font-size:3.8rem;font-weight:800;background:linear-gradient(135deg,#0f3b5c,#1e4a76,#2563eb);-webkit-background-clip:text;background-clip:text;color:transparent;animation:fadeIn 1s ease}
+.hero-left p{font-size:1.2rem;margin:1rem 0;color:#1e4a6e}
+.btn-group{display:flex;gap:1rem;margin-top:1.5rem;flex-wrap:wrap}
+.btn{padding:0.8rem 1.8rem;border-radius:40px;font-weight:600;text-decoration:none;transition:all 0.3s ease;display:inline-flex;align-items:center;gap:8px;cursor:pointer;font-family:inherit;font-size:1rem}
+.btn-primary{background:#2563eb;color:white;border:none;box-shadow:0 4px 15px rgba(37,99,235,0.3)}
+.btn-primary:hover{background:#1d4ed8;transform:translateY(-3px);box-shadow:0 8px 25px rgba(37,99,235,0.4)}
+.btn-outline{background:transparent;border:2px solid #2563eb;color:#2563eb}
+.btn-outline:hover{background:rgba(37,99,235,0.1);transform:translateY(-3px)}
+.avatar-container{flex:1;min-width:280px;display:flex;justify-content:center;align-items:center}
+.avatar-frame{width:320px;height:320px;background:linear-gradient(135deg,rgba(37,99,235,0.2),rgba(96,165,250,0.3));border-radius:50%;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 20px 40px rgba(0,0,0,0.1);overflow:hidden}
+.avatar-frame img{width:150%;height:130%;object-fit:cover}
+.about-wrap{display:flex;flex-wrap:wrap;margin:0;padding:0}
+.about-img-side{flex:1;min-width:250px;background:white;display:flex;align-items:center;justify-content:center;padding:2rem}
+.about-img-frame{width:100%;max-width:320px;aspect-ratio:4/5;border-radius:28px;overflow:hidden}
+.about-img-frame img{width:100%;height:100%;object-fit:cover;border-radius:28px}
+.about-text-side{flex:1.5;min-width:280px;padding:3rem;background:white}
+.section-title{font-size:2.2rem;margin-bottom:1rem;display:inline-block;border-left:5px solid #2563eb;padding-left:1rem;color:#0c4a6e;position:relative}
+.section-title::after{content:'';position:absolute;bottom:-5px;left:1rem;width:60px;height:3px;background:linear-gradient(90deg,#2563eb,transparent)}
+.skills-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.8rem;margin-top:2rem}
+.skills-grid.hidden-skills .skill-card:nth-child(n+5){display:none}
+.skill-card{background:rgba(255,255,255,0.8);backdrop-filter:blur(8px);border-radius:28px;padding:1.5rem;border:1px solid rgba(37,99,235,0.2);transition:all 0.4s cubic-bezier(0.4,0,0.2,1);color:#0f2f44;box-shadow:0 4px 12px rgba(0,0,0,0.03)}
+.skill-card:hover{border-color:#3b82f6;transform:translateY(-8px);background:rgba(255,255,255,0.95);box-shadow:0 15px 35px rgba(0,0,0,0.1)}
+.skill-icon{font-size:2rem;color:#2563eb;margin-bottom:1rem}
+.skill-name{font-weight:700;font-size:1.1rem;margin-bottom:0.5rem}
+.exp-grid,.education-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.8rem;margin-top:2rem}
+.exp-card,.education-card{background:rgba(255,255,255,0.8);backdrop-filter:blur(8px);border-radius:28px;padding:1.5rem;border:1px solid rgba(37,99,235,0.2);transition:all 0.4s cubic-bezier(0.4,0,0.2,1);color:#0f2f44;box-shadow:0 4px 12px rgba(0,0,0,0.03)}
+.exp-card:hover,.education-card:hover{border-color:#3b82f6;transform:translateY(-8px);background:rgba(255,255,255,0.95);box-shadow:0 15px 35px rgba(0,0,0,0.1)}
+.exp-title,.edu-title{font-size:1.3rem;font-weight:700;color:#1e3a8a}
+.exp-date,.edu-date{font-size:0.8rem;color:#4a6f8f;margin:0.5rem 0}
+.edu-institution{font-weight:600;color:#2563eb;margin-bottom:0.5rem}
+.contact-info{display:flex;flex-wrap:wrap;gap:2rem;justify-content:center;margin-top:2rem}
+.contact-card{background:rgba(255,255,255,0.85);backdrop-filter:blur(4px);padding:1.2rem 2rem;border-radius:50px;display:flex;align-items:center;gap:12px;border:1px solid #90cdf4;transition:all 0.3s ease;color:#1e4a76;text-decoration:none}
+.contact-card:hover{transform:translateY(-5px);background:white;box-shadow:0 10px 25px rgba(0,0,0,0.1);border-color:#3b82f6}
+.contact-card i{font-size:1.5rem;color:#2563eb}
+.show-more-skills-btn{background:transparent;border:2px solid #2563eb;color:#2563eb;padding:0.8rem 2rem;border-radius:40px;font-weight:600;cursor:pointer;transition:all 0.3s ease;display:inline-flex;align-items:center;gap:8px;margin-top:2rem;font-family:inherit;font-size:1rem}
+.show-more-skills-btn:hover{background:#2563eb;color:white;transform:translateY(-2px)}
+.projects-grid{display:flex;flex-wrap:wrap;gap:20px;perspective:1000px}
+.project-card-container{width:250px;height:300px;perspective:1000px}
+.project-card-inner{position:relative;width:100%;height:100%;transition:transform 0.6s cubic-bezier(0.4,0,0.2,1);transform-style:preserve-3d}
+.project-card-container:hover .project-card-inner{transform:rotateY(180deg)}
+.project-card-front,.project-card-back{position:absolute;width:100%;height:100%;-webkit-backface-visibility:hidden;backface-visibility:hidden;border-radius:16px;padding:24px;box-sizing:border-box;border:1px solid #e2e8f0;box-shadow:0 4px 12px rgba(0,0,0,0.05);display:flex;flex-direction:column}
+.project-card-front{background:#ffffff;color:#1e293b}
+.project-card-back{background:#f8fafc;color:#334155;transform:rotateY(180deg);justify-content:space-between}
+.back-desc{flex-grow:1;overflow-y:auto;margin-top:10px;padding-right:4px}
+.back-desc::-webkit-scrollbar{width:4px}
+.back-desc::-webkit-scrollbar-thumb{background:#cbd5e1;border-radius:4px}
+footer{text-align:center;padding:2rem;background:rgba(200,230,255,0.6);border-radius:40px;margin:1rem auto 2rem;max-width:1300px;color:#1e4a6e}
+.nav-toggle{display:none;background:none;border:none;font-size:1.5rem;color:#2563eb;cursor:pointer}
+@media(max-width:780px){
+  nav{flex-direction:column;gap:0.8rem}
+  .nav-toggle{display:block}
+  .nav-links{display:none;width:100%;flex-direction:column;gap:1rem}
+  .nav-links.open{display:flex}
+  .hero-left h1{font-size:2.2rem}
+  .content section{padding:2rem 1.2rem;margin:1rem}
+  .about-wrap{flex-direction:column}
+  .about-img-side{order:1;padding:1.5rem}
+  .about-text-side{padding:1.5rem}
+  .skills-grid.hidden-skills .skill-card:nth-child(n+4){display:none}
+}
+/* Chatbot */
+.chatbot-container{position:fixed;bottom:20px;right:20px;z-index:1000}
+.chatbot-button{width:60px;height:60px;background:linear-gradient(135deg,#2563eb,#1d4ed8);border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:0 4px 20px rgba(37,99,235,0.4);transition:all 0.3s ease;border:none;color:white;font-size:1.8rem;position:relative}
+.chatbot-button:hover{transform:scale(1.1);box-shadow:0 6px 25px rgba(37,99,235,0.5)}
+.chatbot-badge{position:absolute;top:-5px;right:-5px;background:#8b5cf6;color:white;font-size:0.6rem;padding:2px 6px;border-radius:20px;font-weight:bold}
+.chatbot-window{position:fixed;bottom:90px;right:20px;width:380px;height:520px;background:white;border-radius:24px;box-shadow:0 20px 50px rgba(0,0,0,0.2);display:none;flex-direction:column;overflow:hidden;z-index:1000}
+.chatbot-header{background:linear-gradient(135deg,#2563eb,#1d4ed8);color:white;padding:1rem 1.2rem;display:flex;justify-content:space-between;align-items:center}
+.chatbot-header h4{margin:0;font-size:1rem;display:flex;align-items:center;gap:8px}
+.chatbot-status{font-size:0.7rem;opacity:0.8;display:flex;align-items:center;gap:5px}
+.status-dot{width:8px;height:8px;background:#22c55e;border-radius:50%;display:inline-block;animation:pulse 1.5s infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:0.5}}
+.close-chat{background:none;border:none;color:white;font-size:1.3rem;cursor:pointer;opacity:0.8}
+.close-chat:hover{opacity:1}
+.chatbot-messages{flex:1;padding:1rem;overflow-y:auto;background:#f8fafc}
+.message{margin-bottom:1rem;display:flex}
+.bot-message{background:#e0f2fe;padding:10px 14px;border-radius:18px;border-bottom-left-radius:4px;max-width:85%;font-size:0.85rem;color:#1e4a76;line-height:1.5}
+.bot-message strong{color:#2563eb}
+.user-message{justify-content:flex-end}
+.user-message .message-text{background:#2563eb;color:white;padding:10px 14px;border-radius:18px;border-bottom-right-radius:4px;max-width:85%;font-size:0.85rem;line-height:1.4}
+.typing-indicator{display:flex;gap:4px;padding:8px 12px;background:#e0f2fe;border-radius:18px;width:fit-content}
+.typing-indicator span{width:6px;height:6px;background:#2563eb;border-radius:50%;animation:typingBounce 1.4s infinite}
+.typing-indicator span:nth-child(2){animation-delay:0.2s}
+.typing-indicator span:nth-child(3){animation-delay:0.4s}
+@keyframes typingBounce{0%,60%,100%{transform:translateY(0);opacity:0.4}30%{transform:translateY(-8px);opacity:1}}
+.chatbot-input-area{display:flex;padding:0.8rem;border-top:1px solid #e2e8f0;background:white;gap:8px}
+.chatbot-input{flex:1;padding:0.7rem 1rem;border:1px solid #cbd5e1;border-radius:30px;outline:none;font-family:inherit;font-size:0.85rem;transition:border-color 0.3s}
+.chatbot-input:focus{border-color:#2563eb}
+.chatbot-send{background:#2563eb;border:none;color:white;width:42px;height:42px;border-radius:50%;cursor:pointer;transition:all 0.3s ease;display:flex;align-items:center;justify-content:center}
+.chatbot-send:hover{background:#1d4ed8;transform:scale(1.05)}
+.chatbot-send:disabled{opacity:0.5;cursor:not-allowed}
+.suggestion-chips{display:flex;gap:8px;padding:10px 12px;overflow-x:auto;background:#f1f5f9;border-top:1px solid #e2e8f0}
+.suggestion-chip{background:white;border:1px solid #cbd5e1;border-radius:20px;padding:6px 12px;font-size:0.7rem;cursor:pointer;transition:all 0.2s ease;white-space:nowrap}
+.suggestion-chip:hover{background:#2563eb;color:white;border-color:#2563eb}
+@media(max-width:480px){.chatbot-window{width:300px;right:10px;bottom:80px;height:460px}}
+</style>
+</head>
+<body>
+<div class="scroll-progress" id="scrollProgress"></div>
+
+<!-- Floating tech icons -->
+<div style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;overflow:hidden">
+  <div style="position:absolute;top:10%;left:5%;animation:floatData 14s ease-in-out infinite"><i class="fas fa-code" style="font-size:1.2rem;color:#2563eb;opacity:0.15"></i></div>
+  <div style="position:absolute;top:25%;right:8%;animation:floatData 11s ease-in-out infinite 2s"><i class="fas fa-server" style="font-size:1rem;color:#3b82f6;opacity:0.15"></i></div>
+  <div style="position:absolute;top:60%;left:12%;animation:floatData 18s ease-in-out infinite 1s"><i class="fas fa-database" style="font-size:1.4rem;color:#2563eb;opacity:0.12"></i></div>
+  <div style="position:absolute;top:75%;right:15%;animation:floatData 13s ease-in-out infinite 3s"><i class="fas fa-laptop-code" style="font-size:1.1rem;color:#60a5fa;opacity:0.15"></i></div>
+  <div style="position:absolute;top:40%;left:85%;animation:floatData 16s ease-in-out infinite 0.5s"><i class="fab fa-react" style="font-size:1rem;color:#2563eb;opacity:0.12"></i></div>
+  <div style="position:absolute;top:85%;left:20%;animation:floatData 12s ease-in-out infinite 2.5s"><i class="fab fa-node-js" style="font-size:1.3rem;color:#3b82f6;opacity:0.12"></i></div>
+  <div style="position:absolute;top:15%;left:45%;animation:floatData 20s ease-in-out infinite 1.5s"><i class="fas fa-cloud" style="font-size:0.9rem;color:#2563eb;opacity:0.15"></i></div>
+  <div style="position:absolute;top:50%;right:35%;animation:floatData 15s ease-in-out infinite 4s"><i class="fas fa-microchip" style="font-size:1.2rem;color:#60a5fa;opacity:0.12"></i></div>
+  <div style="position:absolute;top:30%;left:15%;animation:floatData 17s ease-in-out infinite 0.8s"><i class="fas fa-terminal" style="font-size:1rem;color:#2563eb;opacity:0.1"></i></div>
+  <div style="position:absolute;bottom:20%;right:25%;animation:floatData 19s ease-in-out infinite 3.5s"><i class="fas fa-network-wired" style="font-size:1.1rem;color:#3b82f6;opacity:0.12"></i></div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">SHUBHAM S</div>
+  <button class="nav-toggle" id="navToggle" aria-label="Menu"><i class="fas fa-bars"></i></button>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#freelance">Services</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- CHATBOT -->
+<div class="chatbot-container">
+  <button class="chatbot-button" id="chatbotToggle"><i class="fas fa-comment-dots"></i><span class="chatbot-badge">AI</span></button>
+  <div class="chatbot-window" id="chatbotWindow">
+    <div class="chatbot-header">
+      <h4><i class="fas fa-robot"></i> Shubham</h4>
+      <div class="chatbot-status"><span class="status-dot"></span><span>Online</span></div>
+      <button class="close-chat" id="closeChat">&times;</button>
+    </div>
+    <div class="chatbot-messages" id="chatMessages">
+      <div class="message"><div class="bot-message">&#128075; Hi! I'm Shubham. Ask me about my skills, experience, projects, education, or freelance services!</div></div>
+    </div>
+    <div class="suggestion-chips">
+      <div class="suggestion-chip" data-question="What services do you offer?">Services</div>
+      <div class="suggestion-chip" data-question="What skills do you have?">Skills</div>
+      <div class="suggestion-chip" data-question="What is your experience?">Experience</div>
+      <div class="suggestion-chip" data-question="Tell me about your projects">Projects</div>
+      <div class="suggestion-chip" data-question="How can I contact you?">Contact</div>
+      <div class="suggestion-chip" data-question="What is your education?">Education</div>
+    </div>
+    <div class="chatbot-input-area">
+      <input type="text" class="chatbot-input" id="chatInput" placeholder="Type your question...">
+      <button class="chatbot-send" id="chatSend"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
+</div>
+
+<div class="content">
+
+<!-- HOME -->
+<section id="home" class="hero">
+  <div style="position:absolute;top:0;left:0;width:100%;height:3px;background:linear-gradient(90deg,transparent,#2563eb,#60a5fa,#2563eb,transparent);animation:dataStream 4s ease-in-out infinite"></div>
+  <div class="hero-left">
+    <h1>Shubham Suryavanshi<br><span style="font-size:1.8rem">Full Stack Developer and System Designer</span></h1>
+    <div class="btn-group">
+      <a href="resume.pdf" class="btn btn-primary" download><i class="fas fa-download"></i> Download CV</a>
+      <a href="#contact" class="btn btn-outline"><i class="fas fa-comment"></i> Contact Me</a>
+    </div>
+    <div style="margin-top:1.5rem;display:flex;gap:1.5rem;flex-wrap:wrap;color:#1e4a6e;font-size:0.95rem">
+      <span><i class="fas fa-phone-alt"></i> +91 7643861683</span>
+      <span><i class="fas fa-envelope"></i> shubhamsuryavanshi7643@gmail.com</span>
+    </div>
+  </div>
+  <div class="avatar-container">
+    <div class="avatar-frame">
+      <img src="images/shubham_avatar.jpg" alt="Shubham Suryavanshi - Full Stack Developer">
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="about-wrap">
+    <div class="about-img-side">
+      <div class="about-img-frame">
+        <img src="images/shubham_avatar.jpg" alt="Shubham Suryavanshi">
+      </div>
+    </div>
+    <div class="about-text-side">
+      <h2 class="section-title" style="margin-top:0">ABOUT ME</h2>
+      <p style="line-height:1.7;font-size:1.05rem;color:#1e4a76">
+        Hi, I'm <strong>Shubham</strong>, a Full Stack Developer and Freelancer passionate about helping businesses turn ideas into scalable, efficient digital solutions through code, system architecture, and modern technology. I work with organizations and founders to transform complex technical challenges into practical, user-friendly software.
+      </p>
+      <p style="margin-top:1rem;line-height:1.7;font-size:1.05rem;color:#1e4a76">
+        My expertise includes end-to-end web and mobile app development, API integration, database architecture, performance optimization, and custom software solutions. Whether it's building responsive web applications, engineering robust backends, optimizing system performance, or developing scalable digital platforms, I focus on creating clean, high-performing technology that delivers real business value.
+      </p>
+      <p style="margin-top:1rem;line-height:1.7;font-size:1.05rem;color:#1e4a76">
+        Alongside full-time opportunities, I also work with startups, small businesses, and professionals as a freelance developer. My goal is simple&mdash;understand your requirements, deliver reliable, maintainable code, and build digital products that save time, improve user experience, and drive growth.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="freelance">
+  <h2 class="section-title">Freelance Services</h2>
+  <div style="background:linear-gradient(135deg,rgba(37,99,235,0.05),rgba(96,165,250,0.1));border-radius:16px;padding:1.2rem;text-align:center;margin-bottom:2rem;border:1px dashed rgba(37,99,235,0.2)">
+    <p style="margin:0;font-size:0.95rem;color:#1e4a6e"><strong>30-minute free consultation</strong> for all new clients &mdash; let's discuss your project!</p>
+  </div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.8rem">
+
+    <div style="background:white;border-radius:20px;padding:2rem;border:1px solid rgba(37,99,235,0.08);transition:all 0.3s ease" onmouseover="this.style.borderColor='#2563eb';this.style.transform='translateY(-6px)';this.style.boxShadow='0 15px 35px rgba(37,99,235,0.08)'" onmouseout="this.style.borderColor='rgba(37,99,235,0.08)';this.style.transform='translateY(0)';this.style.boxShadow='none'">
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem">
+        <div style="width:48px;height:48px;background:rgba(37,99,235,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#2563eb"><i class="fas fa-layer-group"></i></div>
+        <h3 style="font-size:1.1rem;color:#0c4a6e;margin:0">Full Stack Development</h3>
+      </div>
+      <p style="color:#475569;line-height:1.6;font-size:0.95rem;margin-bottom:1rem">End-to-end web application development from responsive frontends to robust backends. Building scalable, maintainable digital products using modern tech stacks.</p>
+      <ul style="list-style:none;padding:0;margin:0 0 1.2rem 0">
+        <li style="padding:0.3rem 0;font-size:0.85rem;color:#475569"><i class="fas fa-check" style="color:#2563eb;width:18px"></i> React / Next.js frontends</li>
+        <li style="padding:0.3rem 0;font-size:0.85rem;color:#475569"><i class="fas fa-check" style="color:#2563eb;width:18px"></i> Node.js / Express backends</li>
+        <li style="padding:0.3rem 0;font-size:0.85rem;color:#475569"><i class="fas fa-check" style="color:#2563eb;width:18px"></i> Mobile-responsive design</li>
+        <li style="padding:0.3rem 0;font-size:0.85rem;color:#475569"><i class="fas fa-check" style="color:#2563eb;width:18px"></i> REST and GraphQL APIs</li>
+      </ul>
+      <a href="https://wa.me/917643861683?text=Hi%20Shubham%2C%20I%27m%20interested%20in%20Full%20Stack%20Development." target="_blank" style="width:100%;justify-content:center;padding:0.8rem;font-size:0.95rem;text-decoration:none;display:flex;align-items:center;gap:8px;background:#25D366;color:white;border-radius:40px;border:none;cursor:pointer;transition:all 0.3s ease" onmouseover="this.style.background='#1da851';this.style.transform='scale(1.02)'" onmouseout="this.style.background='#25D366';this.style.transform='scale(1)'"><i class="fab fa-whatsapp" style="font-size:1.2rem"></i> Inquire Now on WhatsApp</a>
+      <a href="mailto:shubhamsuryavanshi7643@gmail.com?subject=Full%20Stack%20Development%20Inquiry" style="width:100%;justify-content:center;padding:0.6rem;font-size:0.85rem;text-decoration:none;display:flex;align-items:center;gap:8px;color:#64748b;border-radius:40px;border:1px solid #e2e8f0;background:transparent;cursor:pointer;transition:all 0.3s ease;margin-top:0.5rem" onmouseover="this.style.borderColor='#2563eb';this.style.color='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0';this.style.color='#64748b'"><i class="fas fa-envelope"></i> Or send an email</a>
+    </div>
+
+    <div style="background:white;border-radius:20px;padding:2rem;border:1px solid rgba(37,99,235,0.08);transition:all 0.3s ease" onmouseover="this.style.borderColor='#2563eb';this.style.transform='translateY(-6px)';this.style.boxShadow='0 15px 35px rgba(37,99,235,0.08)'" onmouseout="this.style.borderColor='rgba(37,99,235,0.08)';this.style.transform='translateY(0)';this.style.boxShadow='none'">
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem">
+        <div style="width:48px;height:48px;background:rgba(37,99,235,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#2563eb"><i class="fas fa-plug"></i></div>
+        <h3 style="font-size:1.1rem;color:#0c4a6e;margin:0">API Integration and Backend Systems</h3>
+      </div>
+      <p style="color:#475569;line-height:1.6;font-size:0.95rem;margin-bottom:1rem">Design and build robust backend systems, integrate third-party APIs, and architect databases for high-performance, scalable applications. We solve technical problems, not just write code.</p>
+      <ul style="list-style:none;padding:0;margin:0 0 1.2rem 0">
+        <li style="padding:0.3rem 0;font-size:0.85rem;color:#475569"><i class="fas fa-check" style="color:#2563eb;width:18px"></i> Third-party API integration</li>
+        <li style="padding:0.3rem 0;font-size:0.85rem;color:#475569"><i class="fas fa-check" style="color:#2563eb;width:18px"></i> Database design and optimization</li>
+        <li style="padding:0.3rem 0;font-size:0.85rem;color:#475569"><i class="fas fa-check" style="color:#2563eb;width:18px"></i> Authentication and security</li>
+      </ul>
+      <a href="https://wa.me/917643861683?text=Hi%20Shubham%2C%20I%27m%20interested%20in%20API%20Integration." target="_blank" style="width:100%;justify-content:center;padding:0.8rem;font-size:0.95rem;text-decoration:none;display:flex;align-items:center;gap:8px;background:#25D366;color:white;border-radius:40px;border:none;cursor:pointer;transition:all 0.3s ease" onmouseover="this.style.background='#1da851';this.style.transform='scale(1.02)'" onmouseout="this.style.background='#25D366';this.style.transform='scale(1)'"><i class="fab fa-whatsapp" style="font-size:1.2rem"></i> Inquire Now on WhatsApp</a>
+      <a href="mailto:shubhamsuryavanshi7643@gmail.com?subject=API%20Integration%20Inquiry" style="width:100%;justify-content:center;padding:0.6rem;font-size:0.85rem;text-decoration:none;display:flex;align-items:center;gap:8px;color:#64748b;border-radius:40px;border:1px solid #e2e8f0;background:transparent;cursor:pointer;transition:all 0.3s ease;margin-top:0.5rem" onmouseover="this.style.borderColor='#2563eb';this.style.color='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0';this.style.color='#64748b'"><i class="fas fa-envelope"></i> Or send an email</a>
+    </div>
+
+    <div style="background:white;border-radius:20px;padding:2rem;border:1px solid rgba(37,99,235,0.08);transition:all 0.3s ease" onmouseover="this.style.borderColor='#2563eb';this.style.transform='translateY(-6px)';this.style.boxShadow='0 15px 35px rgba(37,99,235,0.08)'" onmouseout="this.style.borderColor='rgba(37,99,235,0.08)';this.style.transform='translateY(0)';this.style.boxShadow='none'">
+      <div style="display:flex;align-items:center;gap:1rem;margin-bottom:1rem">
+        <div style="width:48px;height:48px;background:rgba(37,99,235,0.1);border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:#2563eb"><i class="fas fa-sitemap"></i></div>
+        <h3 style="font-size:1.1rem;color:#0c4a6e;margin:0">System Design and Architecture</h3>
+      </div>
+      <p style="color:#475569;line-height:1.6;font-size:0.95rem;margin-bottom:1rem">Analyze current architecture, identify bottlenecks, recommend improvements, and design scalable system solutions. Clients understand exactly what they're building and why.</p>
+      <ul style="list-style:none;padding:0;margin:0 0 1.2rem 0">
+        <li style="padding:0.3rem 0;font-size:0.85rem;color:#475569"><i class="fas fa-check" style="color:#2563eb;width:18px"></i> Architecture review and planning</li>
+        <li style="padding:0.3rem 0;font-size:0.85rem;color:#475569"><i class="fas fa-check" style="color:#2563eb;width:18px"></i> Performance optimization</li>
+        <li style="padding:0.3rem 0;font-size:0.85rem;color:#475569"><i class="fas fa-check" style="color:#2563eb;width:18px"></i> Scalability consulting</li>
+        <li style="padding:0.3rem 0;font-size:0.85rem;color:#475569"><i class="fas fa-check" style="color:#2563eb;width:18px"></i> Tech stack recommendations</li>
+      </ul>
+      <a href="https://wa.me/917643861683?text=Hi%20Shubham%2C%20I%27m%20interested%20in%20System%20Design." target="_blank" style="width:100%;justify-content:center;padding:0.8rem;font-size:0.95rem;text-decoration:none;display:flex;align-items:center;gap:8px;background:#25D366;color:white;border-radius:40px;border:none;cursor:pointer;transition:all 0.3s ease" onmouseover="this.style.background='#1da851';this.style.transform='scale(1.02)'" onmouseout="this.style.background='#25D366';this.style.transform='scale(1)'"><i class="fab fa-whatsapp" style="font-size:1.2rem"></i> Inquire Now on WhatsApp</a>
+      <a href="mailto:shubhamsuryavanshi7643@gmail.com?subject=System%20Design%20Inquiry" style="width:100%;justify-content:center;padding:0.6rem;font-size:0.85rem;text-decoration:none;display:flex;align-items:center;gap:8px;color:#64748b;border-radius:40px;border:1px solid #e2e8f0;background:transparent;cursor:pointer;transition:all 0.3s ease;margin-top:0.5rem" onmouseover="this.style.borderColor='#2563eb';this.style.color='#2563eb'" onmouseout="this.style.borderColor='#e2e8f0';this.style.color='#64748b'"><i class="fas fa-envelope"></i> Or send an email</a>
+    </div>
+
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <h2 class="section-title">MY SKILLS</h2>
+  <div class="skills-grid hidden-skills" id="skillsGrid">
+    <div class="skill-card"><div class="skill-icon"><i class="fab fa-react"></i></div><div class="skill-name">React.js</div><div>Component UI, hooks, state management</div></div>
+    <div class="skill-card"><div class="skill-icon"><i class="fas fa-layer-group"></i></div><div class="skill-name">Next.js</div><div>SSR, SSG, full-stack React framework</div></div>
+    <div class="skill-card"><div class="skill-icon"><i class="fab fa-html5"></i></div><div class="skill-name">HTML5 / CSS3</div><div>Responsive design, animations, layouts</div></div>
+    <div class="skill-card"><div class="skill-icon"><i class="fab fa-js"></i></div><div class="skill-name">JavaScript / TypeScript</div><div>ES6+, async/await, type-safe dev</div></div>
+    <div class="skill-card"><div class="skill-icon"><i class="fab fa-node-js"></i></div><div class="skill-name">Node.js</div><div>Server-side JS, event-driven architecture</div></div>
+    <div class="skill-card"><div class="skill-icon"><i class="fas fa-server"></i></div><div class="skill-name">Express.js</div><div>REST APIs, middleware, routing</div></div>
+    <div class="skill-card"><div class="skill-icon"><i class="fas fa-plug"></i></div><div class="skill-name">API Integration</div><div>REST, GraphQL, third-party services</div></div>
+    <div class="skill-card"><div class="skill-icon"><i class="fas fa-shield-alt"></i></div><div class="skill-name">Authentication</div><div>JWT, OAuth 2.0, session management</div></div>
+    <div class="skill-card"><div class="skill-icon"><i class="fas fa-database"></i></div><div class="skill-name">SQL / MySQL</div><div>Relational DB design, complex queries</div></div>
+    <div class="skill-card"><div class="skill-icon"><i class="fas fa-leaf"></i></div><div class="skill-name">MongoDB</div><div>NoSQL, aggregation, schema design</div></div>
+    <div class="skill-card"><div class="skill-icon"><i class="fas fa-fire"></i></div><div class="skill-name">Firebase</div><div>Realtime DB, Firestore, Auth</div></div>
+    <div class="skill-card"><div class="skill-icon"><i class="fab fa-github"></i></div><div class="skill-name">Git / GitHub</div><div>Version control, branching, CI/CD</div></div>
+    <div class="skill-card"><div class="skill-icon"><i class="fab fa-docker"></i></div><div class="skill-name">Docker</div><div>Containerization, deployment</div></div>
+    <div class="skill-card"><div class="skill-icon"><i class="fas fa-cloud"></i></div><div class="skill-name">Cloud Deployment</div><div>Vercel, Netlify, AWS basics</div></div>
+    <div class="skill-card"><div class="skill-icon"><i class="fab fa-python"></i></div><div class="skill-name">Python</div><div>Scripting, automation, backend</div></div>
+    <div class="skill-card"><div class="skill-icon"><i class="fab fa-java"></i></div><div class="skill-name">Java</div><div>OOP, data structures, algorithms</div></div>
+    <div class="skill-card"><div class="skill-icon"><i class="fas fa-sitemap"></i></div><div class="skill-name">System Design</div><div>Scalability, microservices, architecture</div></div>
+    <div class="skill-card"><div class="skill-icon"><i class="fas fa-tachometer-alt"></i></div><div class="skill-name">Performance Optimization</div><div>Caching, load balancing, profiling</div></div>
+    <div class="skill-card"><div class="skill-icon"><i class="fas fa-lightbulb"></i></div><div class="skill-name">Problem Solving</div><div>Algorithmic thinking, debugging</div></div>
+    <div class="skill-card"><div class="skill-icon"><i class="fas fa-comments"></i></div><div class="skill-name">Communication</div><div>Clear technical communication</div></div>
+    <div class="skill-card"><div class="skill-icon"><i class="fas fa-clock"></i></div><div class="skill-name">Time Management</div><div>Deadline-driven delivery</div></div>
+    <div class="skill-card"><div class="skill-icon"><i class="fas fa-brain"></i></div><div class="skill-name">Critical Thinking</div><div>Data-driven decisions</div></div>
+  </div>
+  <div style="text-align:center">
+    <button class="show-more-skills-btn" id="showMoreSkillsBtn"><i class="fas fa-plus-circle"></i> Show More</button>
+  </div>
+</section>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <h2 class="section-title">WORK EXPERIENCE</h2>
+  <div class="exp-grid">
+    <div class="exp-card">
+      <div class="exp-title">Full Stack Developer Intern</div>
+      <div class="exp-date">2024 &ndash; Present</div>
+      <ul style="margin-left:1rem;margin-top:0.5rem;color:#1e3a5f">
+        <li>Built and deployed responsive web applications using React.js and Node.js serving hundreds of users.</li>
+        <li>Designed and optimized database schemas (MySQL, MongoDB) improving query performance by 40%.</li>
+        <li>Integrated multiple third-party APIs including payment gateways, maps, and authentication services.</li>
+      </ul>
+    </div>
+    <div class="exp-card">
+      <div class="exp-title">Freelance Web Developer</div>
+      <div class="exp-date">2023 &ndash; Present</div>
+      <ul style="margin-left:1rem;color:#1e3a5f">
+        <li>Delivered custom web solutions for startups and small businesses across diverse industries.</li>
+        <li>Architected scalable backend systems with Node.js and Express, reducing server response times by 35%.</li>
+        <li>Managed end-to-end project delivery from requirements gathering to deployment and maintenance.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education">
+  <h2 class="section-title">EDUCATION</h2>
+  <div class="education-grid">
+    <div class="education-card">
+      <div class="edu-title">Intermediate &ndash; Science</div>
+      <div class="edu-institution"><i class="fas fa-university"></i> College of Commerce Arts and Science</div>
+      <div class="edu-date">2020 &ndash; 2022</div>
+      <p>Percentage: 79%</p>
+    </div>
+    <div class="education-card">
+      <div class="edu-title">Higher Secondary Education</div>
+      <div class="edu-institution"><i class="fas fa-university"></i> Infant Jesus Academy</div>
+      <div class="edu-date">2019 &ndash; 2020</div>
+      <p>Percentage: 87.2%</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects">
+  <h2 class="section-title">FEATURED PROJECTS</h2>
+  <div class="projects-grid">
+
+    <div class="project-card-container">
+      <div class="project-card-inner">
+        <div class="project-card-front">
+          <i class="fas fa-shopping-cart" style="font-size:2rem;color:#2563eb;margin-bottom:12px"></i>
+          <div style="font-weight:bold;font-size:1.1rem;line-height:1.4">E-Commerce Platform</div>
+          <div style="font-size:0.85rem;color:#64748b;margin-top:6px">React + Node.js + MongoDB</div>
+          <p style="margin-top:8px;font-size:0.85rem">A full-featured e-commerce application with product management, cart, payments, and admin dashboard.</p>
+        </div>
+        <div class="project-card-back">
+          <div class="back-desc">
+            <strong style="color:#2563eb">Project Details:</strong>
+            <p style="margin-top:8px;font-size:0.85rem;line-height:1.5">Built with React.js frontend and Node.js/Express backend. Features: user auth (JWT), product catalogue, shopping cart, Razorpay payment integration, order tracking, and admin dashboard. MongoDB with optimized indexing. Deployed on Vercel + Railway.</p>
+          </div>
+          <div style="font-size:0.8rem;color:#2563eb;font-weight:bold;margin-top:10px;text-align:right">Hover to see details <i class="fas fa-sync-alt"></i></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card-container">
+      <div class="project-card-inner">
+        <div class="project-card-front">
+          <i class="fas fa-comments" style="font-size:2rem;color:#2563eb;margin-bottom:12px"></i>
+          <div style="font-weight:bold;font-size:1.1rem;line-height:1.4">Real-Time Chat Application</div>
+          <div style="font-size:0.85rem;color:#64748b;margin-top:6px">Socket.io + React + Node.js</div>
+          <p style="margin-top:8px;font-size:0.85rem">Real-time messaging app with rooms, direct messages, and online presence tracking.</p>
+        </div>
+        <div class="project-card-back">
+          <div class="back-desc">
+            <strong style="color:#2563eb">Project Details:</strong>
+            <p style="margin-top:8px;font-size:0.85rem;line-height:1.5">Real-time chat using Socket.io. Features: chat rooms, direct messaging, online/offline presence, message history (MongoDB), typing indicators, file sharing. Handles 100+ concurrent connections efficiently.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card-container">
+      <div class="project-card-inner">
+        <div class="project-card-front">
+          <i class="fas fa-tasks" style="font-size:2rem;color:#2563eb;margin-bottom:12px"></i>
+          <div style="font-weight:bold;font-size:1.1rem;line-height:1.4">Task Management System</div>
+          <div style="font-size:0.85rem;color:#64748b;margin-top:6px">Next.js + Prisma + PostgreSQL</div>
+          <p style="margin-top:8px;font-size:0.85rem">Team project management tool with Kanban boards, role-based access, and real-time updates.</p>
+        </div>
+        <div class="project-card-back">
+          <div class="back-desc">
+            <strong style="color:#2563eb">Project Details:</strong>
+            <p style="margin-top:8px;font-size:0.85rem;line-height:1.5">Next.js 14 (App Router) full-stack app. Kanban drag-and-drop, team workspaces, RBAC (Admin/Member/Viewer), real-time via Socket.io, deadline tracking, comment threads, activity logs. Prisma ORM + PostgreSQL. Includes productivity graph.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="project-card-container">
+      <div class="project-card-inner">
+        <div class="project-card-front">
+          <i class="fas fa-link" style="font-size:2rem;color:#2563eb;margin-bottom:12px"></i>
+          <div style="font-weight:bold;font-size:1.1rem;line-height:1.4">URL Shortener and Analytics</div>
+          <div style="font-size:0.85rem;color:#64748b;margin-top:6px">Node.js + Redis + MongoDB</div>
+          <p style="margin-top:8px;font-size:0.85rem">High-performance URL shortener with analytics, custom aliases, and QR codes.</p>
+        </div>
+        <div class="project-card-back">
+          <div class="back-desc">
+            <strong style="color:#2563eb">Project Details:</strong>
+            <p style="margin-top:8px;font-size:0.85rem;line-height:1.5">Redis caching (sub-5ms redirects), MongoDB persistence, analytics dashboard (clicks, geo, devices, referrers). Custom aliases, expiry dates, QR codes, bulk management. Handles 10,000+ redirects/day with rate limiting.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <div style="margin-top:2rem;padding:1.5rem;background:rgba(37,99,235,0.05);border-radius:16px;border:1px dashed rgba(37,99,235,0.2)">
+    <p style="text-align:center;color:#1e4a6e;margin:0">
+      <i class="fab fa-github" style="color:#2563eb"></i>
+      View all projects on <a href="https://github.com/Shubham7suryavanshi" target="_blank" style="color:#2563eb;font-weight:600;text-decoration:none">GitHub &rarr;</a>
+    </p>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <h2 class="section-title">CONTACT ME</h2>
+  <p style="color:#1e4a76;margin-bottom:1rem;font-size:1.05rem">Let's build something great together. Reach out anytime!</p>
+  <div class="contact-info">
+    <a href="tel:+917643861683" class="contact-card"><i class="fas fa-phone-alt"></i><div><strong>Phone</strong><br>+91 7643861683</div></a>
+    <a href="mailto:shubhamsuryavanshi7643@gmail.com" class="contact-card"><i class="fas fa-envelope"></i><div><strong>Email</strong><br>shubhamsuryavanshi7643@gmail.com</div></a>
+    <a href="https://www.linkedin.com/in/shubham-7463-suryavanshi" target="_blank" class="contact-card"><i class="fab fa-linkedin"></i><div><strong>LinkedIn</strong><br>shubham-7463-suryavanshi</div></a>
+    <a href="https://github.com/Shubham7suryavanshi" target="_blank" class="contact-card"><i class="fab fa-github"></i><div><strong>GitHub</strong><br>Shubham7suryavanshi</div></a>
+    <a href="https://wa.me/917643861683?text=Hi%20Shubham%2C%20I%27d%20like%20to%20connect!" target="_blank" class="contact-card"><i class="fab fa-whatsapp"></i><div><strong>WhatsApp</strong><br>+91 7643861683</div></a>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 Shubham Suryavanshi | Full Stack Developer and System Designer</p>
+  <p style="margin-top:0.5rem;font-size:0.85rem;opacity:0.8">Built with &hearts; using HTML, CSS and JavaScript</p>
+  <div style="margin-top:1rem;display:flex;gap:1.5rem;justify-content:center">
+    <a href="https://github.com/Shubham7suryavanshi" target="_blank" style="color:#1e4a76;text-decoration:none;transition:color 0.3s" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#1e4a76'"><i class="fab fa-github fa-lg"></i></a>
+    <a href="https://www.linkedin.com/in/shubham-7463-suryavanshi" target="_blank" style="color:#1e4a76;text-decoration:none;transition:color 0.3s" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#1e4a76'"><i class="fab fa-linkedin fa-lg"></i></a>
+    <a href="mailto:shubhamsuryavanshi7643@gmail.com" style="color:#1e4a76;text-decoration:none;transition:color 0.3s" onmouseover="this.style.color='#2563eb'" onmouseout="this.style.color='#1e4a76'"><i class="fas fa-envelope fa-lg"></i></a>
+  </div>
+</footer>
+
+<script>
+window.addEventListener('scroll',function(){var sp=document.getElementById('scrollProgress');if(sp){var st=document.documentElement.scrollTop,sh=document.documentElement.scrollHeight-document.documentElement.clientHeight;sp.style.width=(st/sh*100)+'%';}});
+var obs=new IntersectionObserver(function(entries){entries.forEach(function(entry){if(entry.isIntersecting){entry.target.classList.add('visible');}});},{threshold:0.1});
+document.querySelectorAll('.content section').forEach(function(el){obs.observe(el);});
+var sections=document.querySelectorAll('section[id]'),navLinks=document.querySelectorAll('.nav-links a');
+window.addEventListener('scroll',function(){var current='';sections.forEach(function(s){if(window.scrollY>=s.offsetTop-80)current=s.id;});navLinks.forEach(function(a){a.classList.remove('active');if(a.getAttribute('href')==='#'+current)a.classList.add('active');});});
+var nt=document.getElementById('navToggle'),nl=document.getElementById('navLinks');
+if(nt)nt.addEventListener('click',function(){nl.classList.toggle('open');});
+document.querySelectorAll('.nav-links a').forEach(function(a){a.addEventListener('click',function(){nl.classList.remove('open');});});
+var smb=document.getElementById('showMoreSkillsBtn'),sg=document.getElementById('skillsGrid'),exp=false;
+if(smb)smb.addEventListener('click',function(){exp=!exp;if(exp){sg.classList.remove('hidden-skills');smb.innerHTML='<i class="fas fa-minus-circle"></i> Show Less';}else{sg.classList.add('hidden-skills');smb.innerHTML='<i class="fas fa-plus-circle"></i> Show More';}});
+var cb=document.getElementById('chatbotToggle'),cw=document.getElementById('chatbotWindow'),cc=document.getElementById('closeChat'),cs=document.getElementById('chatSend'),ci=document.getElementById('chatInput'),cm=document.getElementById('chatMessages');
+if(cb)cb.addEventListener('click',function(){cw.style.display=cw.style.display==='flex'?'none':'flex';if(cw.style.display==='flex')ci.focus();});
+if(cc)cc.addEventListener('click',function(){cw.style.display='none';});
+function showTyping(){var d=document.createElement('div');d.className='message';d.id='typing';d.innerHTML='<div class="typing-indicator"><span></span><span></span><span></span></div>';cm.appendChild(d);cm.scrollTop=cm.scrollHeight;}
+function removeTyping(){var i=document.getElementById('typing');if(i)i.remove();}
+function addMsg(text,isUser){var d=document.createElement('div');d.className='message'+(isUser?' user-message':'');d.innerHTML=isUser?'<div class="message-text">'+escHtml(text)+'</div>':'<div class="bot-message">'+text+'</div>';cm.appendChild(d);cm.scrollTop=cm.scrollHeight;}
+function escHtml(t){var d=document.createElement('div');d.textContent=t;return d.innerHTML;}
+function getBotReply(m){m=m.toLowerCase();
+if(m.includes('service')||m.includes('offer')||m.includes('freelance')){return '<strong>My Freelance Services</strong><br><br>&#128296; <strong>Full Stack Development</strong><br>React/Next.js, Node.js, REST APIs, Mobile-responsive<br><br>&#9881;&#65039; <strong>API Integration and Backend</strong><br>Third-party APIs, DB design, Auth and security<br><br>&#127963;&#65039; <strong>System Design and Architecture</strong><br>Scalability, Performance, Tech stack consulting<br><br><em>Free 30-minute consultation for all new clients!</em>';}
+if(m.includes('price')||m.includes('cost')||m.includes('rate')){return '<strong>Pricing</strong><br><br>Full Stack Dev: Starting at Rs 15,000<br>API Integration: Starting at Rs 5,000<br>System Design: Starting at Rs 3,000/session<br><br><em>Custom quotes available!</em>';}
+if(m.includes('skill')||m.includes('tool')||m.includes('tech')){return '<strong>My Skills</strong><br><br>Frontend: React.js, Next.js, HTML5/CSS3, JavaScript/TypeScript<br>Backend: Node.js, Express.js, APIs, GraphQL<br>Databases: MySQL, MongoDB, Firebase, PostgreSQL<br>DevOps: Git, Docker, Vercel, Netlify<br>System Design: Microservices, Performance, Scalability';}
+if(m.includes('experience')||m.includes('work')||m.includes('job')){return '<strong>Work Experience</strong><br><br><strong>Full Stack Developer Intern</strong> | 2024-Present<br>Built React + Node.js apps, optimized DB schemas by 40%<br>Integrated payment gateways and third-party APIs<br><br><strong>Freelance Web Developer</strong> | 2023-Present<br>Custom web solutions for startups and businesses<br>Reduced server response times by 35%';}
+if(m.includes('project')||m.includes('built')){return '<strong>Featured Projects</strong><br><br>E-Commerce Platform (React + Node.js + MongoDB)<br>Real-Time Chat App (Socket.io + React)<br>Task Management System (Next.js + PostgreSQL)<br>URL Shortener and Analytics (Node.js + Redis)<br><br>GitHub: github.com/Shubham7suryavanshi';}
+if(m.includes('education')||m.includes('study')||m.includes('college')){return '<strong>Education</strong><br><br>Intermediate - Science<br>College of Commerce Arts and Science (2020-2022)<br>Percentage: 79%<br><br>Higher Secondary Education<br>Infant Jesus Academy (2019-2020)<br>Percentage: 87.2%';}
+if(m.includes('contact')||m.includes('email')||m.includes('phone')){return '<strong>Contact Information</strong><br><br>Phone: +91 7643861683<br>Email: shubhamsuryavanshi7643@gmail.com<br>LinkedIn: linkedin.com/in/shubham-7463-suryavanshi<br>GitHub: github.com/Shubham7suryavanshi<br>Availability: Mon-Sat, 9AM - 8PM';}
+if(m.includes('hire')||m.includes('available')){return '<strong>Hire Me!</strong><br><br>Currently available for freelance projects!<br><br>Clean code, fast delivery, free consultation, post-delivery support<br><br>Phone: +91 7643861683<br>Email: shubhamsuryavanshi7643@gmail.com';}
+if(m.includes('hello')||m.includes('hi')||m.includes('hey')){return '<strong>Hello!</strong><br><br>Welcome! I\'m Shubham, a Full Stack Developer and System Designer.<br><br>Ask me about services, skills, experience, projects, education, or how to hire me!';}
+if(m.includes('thank')){return '<strong>You\'re welcome!</strong><br><br>Ready to work together?<br>Phone: +91 7643861683<br>Email: shubhamsuryavanshi7643@gmail.com';}
+return '<strong>Thanks for your question!</strong><br><br>I can help with:<br>Services and pricing, Skills, Experience, Projects, Education, Contact<br><br>Or email me directly: shubhamsuryavanshi7643@gmail.com';}
+function sendMsg(){var msg=ci.value.trim();if(!msg)return;addMsg(msg,true);ci.value='';cs.disabled=true;showTyping();setTimeout(function(){removeTyping();addMsg(getBotReply(msg),false);cs.disabled=false;ci.focus();},500);}
+document.querySelectorAll('.suggestion-chip').forEach(function(c){c.addEventListener('click',function(){ci.value=c.getAttribute('data-question');sendMsg();});});
+if(cs)cs.addEventListener('click',sendMsg);
+if(ci)ci.addEventListener('keypress',function(e){if(e.key==='Enter')sendMsg();});
+</script>
+</body>
+</html>
